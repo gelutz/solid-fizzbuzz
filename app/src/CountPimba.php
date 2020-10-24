@@ -44,7 +44,7 @@ final class CountPimba implements Pimbas {
      */
 	public function printValues() {
 		for ($i=1; $i <= $this->max; $i++) {
-			print($this->checkPimba($i)."\n");
+			print($this->getPimba($i)."\n");
 		}
 	}
 

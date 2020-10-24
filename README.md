@@ -13,13 +13,13 @@ app
 ```
 
 ### Usando o Docker:
+<b> Testes </b>
 Dentro da pasta app/
-`docker build --tag trescincopimba:1.0 .`
 
-`docker run -it --name tcp trescincopimba:1.0`
+`docker-compose up -d`
 
 ### Usando o PHP local
-##### Testes
+<b> Testes </b>
 Dentro da pasta app/
 
 `./vendor/bin/phpunit --bootstrap autoload.php tests`
