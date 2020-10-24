@@ -15,11 +15,13 @@ app
 ### Usando o Docker:
 Dentro da pasta app/
 `docker build --tag trescincopimba:1.0 .`
+
 `docker run -it --name tcp trescincopimba:1.0`
 
 ### Usando o PHP local
 ##### Testes
 Dentro da pasta app/
+
 `./vendor/bin/phpunit --bootstrap autoload.php tests`
 
 
