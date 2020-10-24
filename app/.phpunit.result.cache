@@ -1,0 +1,1 @@
+C:37:"PHPUnit\Runner\DefaultTestResultCache":263:{a:2:{s:7:"defects";a:1:{s:45:"CountPimbaTest::testNaoPodeCriarComArrayVazia";i:3;}s:5:"times";a:3:{s:45:"CountPimbaTest::testNaoPodeCriarComArrayVazia";d:0.002;s:36:"CountPimbaTest::testVaiEscreverTexto";d:0.001;s:37:"CountPimbaTest::testVaiEscreverNumero";d:0;}}}
