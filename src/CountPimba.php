@@ -2,13 +2,13 @@
 
 interface Pimbas {
 
-	function checkPimba(int $number);
+	function getPimba(int $number);
 
 	function printValues();
 
 }
 
-class CountPimba implements Pimbas {
+final class CountPimba implements Pimbas {
 
 	private $breakpoints;
 	private $max;
@@ -27,9 +27,9 @@ class CountPimba implements Pimbas {
      * 	@param $number: o valor a ser verificado
      *  @return $str:   respectiva string do $breakpoints
      */
-	function checkPimba(int $number) {
+	public function getPimba(int $number) : string {
 
-		$str = $number;	
+		$str = (string) $number;
 		foreach ($this->breakpoints as $key => $value) {
 			if ($number % $key == 0) {
 				$str = $this->breakpoints[$key];
@@ -41,24 +41,11 @@ class CountPimba implements Pimbas {
 	/**
 	 *	Printa os números de 1 até $max.
 	 *  Se o valor for divisível por um dos valores em $breakpoints, retorna a string correspondente.
-     * 	@param None
      */
-	function printValues() {
+	public function printValues() {
 		for ($i=1; $i <= $this->max; $i++) {
 			print($this->checkPimba($i)."\n");
 		}
 	}
 
 }
-
-$divs = [
-	3 => "Tres",
-	5 => "Cinco",
-	15 => "Pimba"
-];
-
-$max = 100;
-
-$pimba = new CountPimba($divs, $max);
-var_dump($pimba);
-$pimba->printValues();
