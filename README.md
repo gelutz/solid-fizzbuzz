@@ -13,17 +13,32 @@ app
 ```
 
 ### Usando o Docker:
-<b> Testes </b>
-Dentro da pasta app/
 
 `docker-compose up -d`
+
+`docker exec -it trescincopimba bash`
+
+<b> Testes Unitários </b>
+Dentro da pasta app/
+
+`composer run tests`
+
+
+<b> Script main.php </b>
+Dentro da pasta app/src/
+
+`php main.php`
 
 ### Usando o PHP local
 <b> Testes </b>
 Dentro da pasta app/
 
-`./vendor/bin/phpunit --bootstrap autoload.php tests`
+`composer run tests`
 
+<b> Script main.php </b>
+Dentro da pasta app/src/
+
+`php main.php`
 
 -----------
 Author: [@LutzGe](https://github.com/LutzGe)
