@@ -4,10 +4,12 @@
 ```
 app
 ├── composer.json
+├── docker-compose.yml
 ├── Dockerfile
 ├── phpunit.xml
 ├── src
-│   └── CountPimba.php
+│   ├── CountPimba.php
+│   └── main.php
 └── tests
     └── CountPimbaTest.php
 ```
