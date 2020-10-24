@@ -13,13 +13,17 @@ app
 └── tests
     └── CountPimbaTest.php
 ```
+----
 
-### Usando o Docker:
+### Rodando e acessando o container Docker:
 
 `docker-compose up -d`
 
 `docker exec -it trescincopimba bash`
 
+
+#### Scripts
+<small>(Dentro do container do docker)</small><br>
 <b> Testes Unitários </b>
 
 Dentro da pasta app/
@@ -32,6 +36,8 @@ Dentro da pasta app/
 Dentro da pasta app/src/
 
 `php main.php`
+
+-----
 
 ### Usando o PHP e Composer local
 <b> Testes Unitários </b>
