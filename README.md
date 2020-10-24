@@ -21,7 +21,7 @@ app
 <b> Testes Unitários </b>
 Dentro da pasta app/
 
-`composer run tests`
+`composer run test`
 
 
 <b> Script main.php </b>
@@ -29,11 +29,11 @@ Dentro da pasta app/src/
 
 `php main.php`
 
-### Usando o PHP local
+### Usando o PHP e Composer local
 <b> Testes </b>
 Dentro da pasta app/
 
-`composer run tests`
+`composer run test`
 
 <b> Script main.php </b>
 Dentro da pasta app/src/
