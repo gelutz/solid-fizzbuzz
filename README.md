@@ -1,2 +1,2 @@
 -----------
-Author: @LutzGe(http://github.com/LutzGe)
+Author: @LutzGe[http://github.com/LutzGe]
