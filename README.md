@@ -21,23 +21,27 @@ app
 `docker exec -it trescincopimba bash`
 
 <b> Testes Unitários </b>
+
 Dentro da pasta app/
 
 `composer run test`
 
 
 <b> Script main.php </b>
+
 Dentro da pasta app/src/
 
 `php main.php`
 
 ### Usando o PHP e Composer local
-<b> Testes </b>
+<b> Testes Unitários </b>
+
 Dentro da pasta app/
 
 `composer run test`
 
 <b> Script main.php </b>
+
 Dentro da pasta app/src/
 
 `php main.php`
