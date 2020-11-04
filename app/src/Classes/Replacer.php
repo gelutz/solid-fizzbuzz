@@ -15,17 +15,32 @@ class Replacer {
     }
 
     /**
-     * Adiciona uma ou mais regras do tipo RegraDeMod
-     * também ordena as regras de acordo com o getNumber() delas;
-     */
+     * Adiciona uma ou mais regras
+     * @param array
+     * @return void
+     */ 
     public function addRegras( array $regras ) {
-        
         foreach ($regras as $regra ) {
-            $this->regras[$regra->getPoint()] = $regra;
+            $this->addRegra( $regra );
         }
+    }
 
-        // sort de acordo com as chaves da array, sem perder as chaves
-        ksort($this->regras);
+    /**
+     * Adiciona uma regra que implemente RegraDeTroca
+     * organiza o array de regras na ordem ascendente
+     * @param object
+     * @return bool
+     */
+    public function addRegra( RegraDeTroca $regra ) {
+        try {
+            $this->regras[$regra->getPoint()] = $regra;
+
+            ksort($this->regras);
+            
+            return TRUE;
+        } catch (\Throwable $th) {
+            return FALSE;
+        }
     }
 
     /**

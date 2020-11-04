@@ -2,17 +2,31 @@
 
 ### Estrutura:
 ```
-app
-├── composer.json
-├── docker-compose.yml
-├── Dockerfile
-├── phpunit.xml
+├── ...
 ├── src
-│   ├── CountPimba.php
-│   └── main.php
-└── tests
-    └── CountPimbaTest.php
+│   ├── Classes
+│   │   ├── Counter.php
+│   │   └── Replacer.php
+│   ├── main.php
+│   └── Regras
+│       ├── RegraDeMod.php
+│       └── RegraDeTroca.php
+├── tests
+│   ├── CounterTest.php
+│   └── ReplacerTest.php
+├── vendor/
+└── ...
 ```
+
+Uma ` RegraDeTroca ` pode usar o ` check($value) ` para verificar se $value passa ou não
+por uma das regras adicionadas àquela instância de Replacer.
+
+Adiciona-se regras ao ` Replacer ` com o ` addRegra( RegraDeTroca $regras) `
+recebe um objeto que implementa *RegraDeTroca*.
+
+` Counter.php ` pode receber um objecto *Replacer*, que será verificado a cada iteração da função
+` fullCount `
+
 ----
 
 ### Rodando e acessando o container Docker:
