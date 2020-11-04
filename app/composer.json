@@ -1,7 +1,8 @@
 {
     "autoload": {
         "classmap": [
-            "src/"
+            "src/",
+            "tests"
         ]
     },
     "require-dev": {
@@ -9,7 +10,7 @@
     },
     "scripts":{
         "test":"vendor/bin/phpunit --bootstrap vendor/autoload.php",
-        "main":"vendor/bin/php --bootstrap vendor/autoload.php"
+        "main":"vendor/bin/php-parse"
     },
     "require": {}
 }
