@@ -2,10 +2,8 @@ version: "3"
 services: 
     php:
         build: .
-        restart: always
-        container_name: trescincopimba
-        # para manter o container rodando
-        entrypoint: ["tail", "-f", "/dev/null"]
+        container_name: solidfizzbuzz
+        entrypoint: ["composer", "run", "test"]
         
         ports: 
             - 3030:3030

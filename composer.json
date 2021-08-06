@@ -10,7 +10,8 @@
     },
     "scripts":{
         "test":"vendor/bin/phpunit --bootstrap vendor/autoload.php",
-        "main":"vendor/bin/php-parse"
+        "main":"vendor/bin/php-parse",
+        "cli" :"php -a -d vendor/autoload.php"
     },
     "require": {
         "php": "^7.2|^8"

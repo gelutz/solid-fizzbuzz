@@ -13,7 +13,7 @@ final class CounterTest extends TestCase {
     private $counter;
 
     protected function setUp(): void {
-        $ruleChain = new ModRule(3, "Fizz", new ModRule(5, "Buzz"));
+        $ruleChain = new ModRule(3, "Fizz", new ModRule(5, "Buzz", new ModRule(15, "FizzBuzz")));
 
         $this->counter = new Counter($ruleChain);
     }
@@ -48,8 +48,8 @@ final class CounterTest extends TestCase {
             $counted[] = $this->counter->count();
         }
 
-        $this->assertEquals($counted[15],  "Buzz");
-        $this->assertEquals($counted[45], "Buzz");
-        $this->assertEquals($counted[90], "Buzz");
+        $this->assertEquals($counted[15], "FizzBuzz");
+        $this->assertEquals($counted[45], "FizzBuzz");
+        $this->assertEquals($counted[90], "FizzBuzz");
     }
 }
