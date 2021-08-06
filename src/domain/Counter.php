@@ -6,29 +6,22 @@ use FizzBuzz\Infra\Rule;
 
 class Counter
 {
-    private $rules;
+    private $ruleChain;
     private $position;
 
-    public function __construct()
+    public function __construct(Rule $ruleChain)
     {
-        $this->position = 0;
+        $this->position  = 0;
+        $this->ruleChain = $ruleChain;
+
     }
 
     public function count()
     {
-        $message = "";
-
-        foreach ($this->rules as $rule) {
-            $message = !empty($message) ?? $rule->change($this->position);
-        }
-
+        $message = $this->ruleChain->replace($this->position);
         ++$this->position;
-        return $message;
-    }
 
-    public function addRule(Rule $rule): void
-    {
-        $this->rules[] = $rule;
+        return $message;
     }
 
     public function reset()

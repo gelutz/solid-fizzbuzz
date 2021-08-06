@@ -4,5 +4,5 @@ namespace FizzBuzz\Infra;
 
 interface Rule
 {
-    public function change(int $value): string;
+    public function replace(int $value): string;
 }

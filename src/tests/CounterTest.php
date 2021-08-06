@@ -13,17 +13,12 @@ final class CounterTest extends TestCase {
     private $counter;
 
     protected function setUp(): void {
-        $rule3 = new ModRule(3, "Fizz");
-        $rule5 = new ModRule(5, "Buzz");
+        $ruleChain = new ModRule(3, "Fizz", new ModRule(5, "Buzz"));
 
-        $this->counter = new Counter();
-        $this->counter->addRule($rule3);
-        $this->counter->addRule($rule5);
+        $this->counter = new Counter($ruleChain);
     }
 
     public function testMultiplesOfThreeShouldBeFizz() : void {
-        
-
         $counted = [];
         for ($i=0; $i < 100; $i++) { 
             $counted[] = $this->counter->count();
