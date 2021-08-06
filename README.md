@@ -4,6 +4,7 @@
 
 #### After cloning the repository:
 `cd solid-fizzbuzz`
+
 `composer install`
 
 ### Usando o PHP e Composer local
@@ -19,7 +20,9 @@
 <b> Detached </b>
 
 `docker-compose up -d`
+
 `docker exec -it solidfizzbuzz bash`
+
 `composer run test`
 
 -----------
