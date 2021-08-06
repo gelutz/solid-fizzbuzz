@@ -2,11 +2,12 @@
 
 // Criando as regras para o replacer
 
-require 'domain/Counter.php';
-require 'domain/ModRule.php';
+use FizzBuzz\Domain\Counter;
+use FizzBuzz\Domain\ModRule;
 
-$rule3 = new ModRule(3, "Fizz");
-$rule5 = new ModRule(5, "Buzz");
+$ruleChain = new ModRule(3, "Fizz", 
+    new ModRule(5, "Buzz", null)
+);
 
 $counter = new Counter();
 $counter->addRule($rule3);

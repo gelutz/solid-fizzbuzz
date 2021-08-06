@@ -1,17 +1,21 @@
 <?php
 
-require_once 'infra/Rule.php';
+namespace FizzBuzz\Domain;
 
-class Counter {
+use FizzBuzz\Infra\Rule;
 
+class Counter
+{
     private $rules;
     private $position;
 
-    public function __construct() {
+    public function __construct()
+    {
         $this->position = 0;
     }
 
-    function count() {
+    public function count()
+    {
         $message = "";
 
         foreach ($this->rules as $rule) {
@@ -22,11 +26,13 @@ class Counter {
         return $message;
     }
 
-    function addRule(Rule $rule): void {
+    public function addRule(Rule $rule): void
+    {
         $this->rules[] = $rule;
     }
 
-    function reset() {
+    public function reset()
+    {
         $this->position = 0;
     }
 }

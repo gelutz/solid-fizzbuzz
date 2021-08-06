@@ -1,4 +1,4 @@
-FROM php:7.4-cli-alpine
+FROM php:8-cli-alpine
 COPY --from=composer:latest /usr/bin/composer /usr/local/bin/composer
 
 RUN mkdir /app

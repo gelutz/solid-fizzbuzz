@@ -1,27 +1,32 @@
-<?php 
+<?php
 
+namespace FizzBuzz\Tests;
+
+use FizzBuzz\Domain\Counter;
+use FizzBuzz\Domain\ModRule;
 use PHPUnit\Framework\TestCase;
+
 
 
 final class CounterTest extends TestCase {
 
-    public function makeCounter() {
+    private $counter;
+
+    protected function setUp(): void {
         $rule3 = new ModRule(3, "Fizz");
         $rule5 = new ModRule(5, "Buzz");
 
-        $counter = new Counter();
-        $counter->addRule($rule3);
-        $counter->addRule($rule5);
-
-        return $counter;
+        $this->counter = new Counter();
+        $this->counter->addRule($rule3);
+        $this->counter->addRule($rule5);
     }
 
-    public function multiplesOfThreeShouldBeFizz() : void {
-        $counter = $this->makeCounter();
+    public function testMultiplesOfThreeShouldBeFizz() : void {
+        
 
         $counted = [];
         for ($i=0; $i < 100; $i++) { 
-            $counted[] = $counter->count();
+            $counted[] = $this->counter->count();
         }
 
         $this->assertEquals($counted[9],  "Fizz");
@@ -30,12 +35,10 @@ final class CounterTest extends TestCase {
         $this->assertEquals($counted[99], "Fizz");
     }
 
-    public function multiplesOfFiveShouldBeBuzz() : void {
-        $counter = $this->makeCounter();
-
+    public function testMultiplesOfFiveShouldBeBuzz() : void {
         $counted = [];
         for ($i=0; $i < 100; $i++) { 
-            $counted[] = $counter->count();
+            $counted[] = $this->counter->count();
         }
 
         $this->assertEquals($counted[5],  "Buzz");
@@ -44,12 +47,10 @@ final class CounterTest extends TestCase {
         $this->assertEquals($counted[95], "Buzz");
     }
 
-    public function multiplesOfFiftheenShouldBeFizzBuzz() : void {
-        $counter = $this->makeCounter();
-
+    public function testMultiplesOfFiftheenShouldBeFizzBuzz() : void {
         $counted = [];
         for ($i=0; $i < 100; $i++) { 
-            $counted[] = $counter->count();
+            $counted[] = $this->counter->count();
         }
 
         $this->assertEquals($counted[15],  "Buzz");
