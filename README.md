@@ -1,24 +1,6 @@
-# Três Cinco Pimba (FizzBuzz)
+# S.O.L.I.D. FizzBuzz
 
-### Estrutura:
-```
-├── ...
-├── src
-│   ├── Classes
-│   │   ├── Counter.php
-│   │   └── Replacer.php
-│   ├── main.php
-│   └── Regras
-│       ├── RegraDeMod.php
-│       └── RegraDeTroca.php
-├── tests
-│   ├── CounterTest.php
-│   └── ReplacerTest.php
-├── vendor/
-└── ...
-```
-
-Uma ` RegraDeTroca ` pode usar o ` check($value) ` para verificar se $value passa ou não
+A ` RegraDeTroca ` pode usar o ` check($value) ` para verificar se $value passa ou não
 por uma das regras adicionadas àquela instância de Replacer.
 
 Adiciona-se regras ao ` Replacer ` com o ` addRegra( RegraDeTroca $regras) `
