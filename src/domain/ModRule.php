@@ -19,8 +19,9 @@ class ModRule implements Rule
     public function replace(int $value) : string
     {
         $message = (string) $value;
-
-        $message = $this->nextRule->replace($value);
+        if (isset($this->nextRule)) {
+            $message = $this->nextRule->replace($value);
+        }
         
         if ($message === (string) $value AND $value !== 0 AND $value % $this->number === 0) {
             $message = $this->message;

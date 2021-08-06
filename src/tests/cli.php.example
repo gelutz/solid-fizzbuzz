@@ -1,3 +1,4 @@
+
 interface Rule
 {
     public function replace(int $value): string;
