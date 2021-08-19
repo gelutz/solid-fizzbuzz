@@ -1,29 +1,33 @@
 # S.O.L.I.D. FizzBuzz
-## Requirements:
-- PHP ^7.3
+A refactored version of FizzBuzz, only containing one `if` statement.
 
-#### After cloning the repository:
-`cd solid-fizzbuzz`
+> I tried to build this project following the S.O.L.I.D. rules, and apllied two design patterns: [Strategy](https://refactoring.guru/design-patterns/strategy) and [Chain of responsability](https://refactoring.guru/design-patterns/chain-of-responsibility)
 
-`composer install`
 
-### Usando o PHP e Composer local
-<b> Testes </b>
+### Installing:
+```bash
+cd solid-fizzbuzz
+docker-compose up
+# This command spins a PHP container and runs all tests, outputting the results to the terminal. 
 
-`composer run test`
+# you can also run locally:
+cd solid-fizzbuzz
+composer install
+composer run test
+```
 
-### Running in Docker:
-<b> Testes </b>
+### Usage example:
+```php
+$ruleChain = new ModRule(3, "Fizz", 
+        new ModRule(5, "Buzz", 
+    new ModRule(15, "FizzBuzz", null) 
+)); # Chain of responsabilities
 
-`docker-compose up`
+$counter = new Counter($ruleChain); # Strategy
 
-<b> Detached </b>
-
-`docker-compose up -d`
-
-`docker exec -it solidfizzbuzz bash`
-
-`composer run test`
-
+for ($j=0; $j < 100; $j++) { 
+    echo $counter->count() . PHP_EOL;
+}
+```
 -----------
-Author: [@gelutz](https://github.com/gelutz)
+Author: [gelutz](https://github.com/gelutz)
