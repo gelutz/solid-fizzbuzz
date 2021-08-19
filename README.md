@@ -1,5 +1,5 @@
 # S.O.L.I.D. FizzBuzz
-A refactored version of FizzBuzz, only containing one `if` statement.
+A refactored version of FizzBuzz, integratin Strategy and Chain of Responsability patterns.
 
 > I tried to build this project following the S.O.L.I.D. rules, and apllied two design patterns: [Strategy](https://refactoring.guru/design-patterns/strategy) and [Chain of responsability](https://refactoring.guru/design-patterns/chain-of-responsibility)
 
