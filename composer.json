@@ -9,7 +9,7 @@
         "phpunit/phpunit": "^9"
     },
     "scripts":{
-        "test":"vendor/bin/phpunit --bootstrap vendor/autoload.php",
+        "test":"vendor/bin/phpunit --bootstrap vendor/autoload.php --testdox",
         "main":"vendor/bin/php-parse",
         "cli" :"php -a -d vendor/autoload.php"
     },
